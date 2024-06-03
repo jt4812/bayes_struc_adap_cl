@@ -1,0 +1,52 @@
+{
+  "exp_dict": {
+    "dataset": "split_mnist",
+    "n_tasks": 5,
+    "single_head": false,
+    "batch_size": 512,
+    "cl_type": "task_il",
+    "n_epochs_per_task_finetune": 10,
+    "use_replay": false,
+    "save_task_solvers": false,
+    "n_epochs_per_task": 15,
+    "seed": 5,
+    "restore_best_weight": true,
+    "use_validation_dataset": true
+  },
+  "model_args": {
+    "input_feature_dim": 784,
+    "out_feature_dim": 2,
+    "max_width": 200,
+    "network_arch": "fc",
+    "mask_type": "weight_mask",
+    "infer_model_structure": true,
+    "use_snr": false,
+    "snr_level": null,
+    "has_norm": false,
+    "has_bayesian_head": false,
+    "use_fixed_mask": true,
+    "use_sigma_k": true,
+    "use_kl_mask": true,
+    "connection_type": "skip_connection_only",
+    "a_prior": 200,
+    "b_prior": 300,
+    "prior_temperature": 0.1,
+    "posterior_temperature": 0.1,
+    "posterior_std": 0.0001,
+    "kl_weight": 0.1,
+    "n_train_samples": 10,
+    "n_test_samples": 100,
+    "truncation_level": 3,
+    "act_thresh": 0.001,
+    "depth_inference": "usage_threshold",
+    "usage_threshold": 0.025
+  },
+  "optimizer_args": {
+    "lr_weight": 0.008,
+    "lr_struc": 0.1,
+    "optimizer_type": "adam",
+    "decay_rate_weight": 0.85,
+    "decay_rate_struc": 1,
+    "use_single_optimizer_across_tasks": false
+  }
+}

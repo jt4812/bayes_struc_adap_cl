@@ -1,0 +1,51 @@
+{
+  "exp_dict": {
+    "dataset": "split_cifar10",
+    "input_as_image": true,
+    "n_tasks": 5,
+    "single_head": false,
+    "batch_size": 256,
+    "cl_type": "task_il",
+    "n_epochs_per_task_finetune": 15,
+    "use_replay": false,
+    "save_task_solvers": false,
+    "n_epochs_per_task": 25,
+    "seed": 1,
+    "restore_best_weight": true,
+    "use_validation_dataset": true
+  },
+  "model_args": {
+    "out_feature_dim": 2,
+    "network_arch": "alexnet",
+    "mask_type": "weight_mask",
+    "conv_mask_type": "single_per_channel",
+    "infer_model_structure": true,
+    "use_snr": false,
+    "snr_type": null,
+    "snr_level": null,
+    "has_norm": false,
+    "use_task_specific_norms": false,
+    "transfer_bn_params": false,
+    "has_bayesian_head": false,
+    "use_fixed_mask": true,
+    "use_sigma_k": true,
+    "use_kl_mask": true,
+    "a_prior": 300,
+    "b_prior": 200,
+    "prior_temperature": 0.1,
+    "posterior_temperature": 0.1,
+    "posterior_std": 0.0001,
+    "kl_weight": 0.1,
+    "n_train_samples": 2,
+    "n_test_samples": 10,
+    "act_thresh": 0.001
+  },
+  "optimizer_args": {
+    "lr_weight": 0.003,
+    "lr_struc": 0.2,
+    "optimizer_type": "adam",
+    "decay_rate_weight": 0.85,
+    "decay_rate_struc": 1,
+    "use_single_optimizer_across_tasks": false
+  }
+}
